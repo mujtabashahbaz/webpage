@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyday Rights in Pakistan - Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .flashcard-container {
+            perspective: 1000px;
+            width: 320px; /* Increased width for better readability */
+            height: 200px; /* Adjust height as needed */
+            margin: 10px;
+        }
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .flashcard-front {
+            background-color: #007bff;
+            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .flashcard-back {
+            background-color: #e9ecef;
+            color: #333;
+            font-size: 0.95em;
+            transform: rotateY(180deg);
+            border: 1px solid #ddd;
+        }
+        h1 {
+            width: 100%;
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Everyday Rights in Pakistan: Flashcards</h1>
+
+    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+        <div class="flashcard">
+            <div class="flashcard-front">
+                What are your rights regarding **Protection from Arbitrary Arrest or Detention** in Pakistan?
+            </div>
+            <div class="flashcard-back">
+                <ul>
+                    <li>Right to life and liberty.</li>
+                    <li>Must be produced before a magistrate within **24 hours**.</li>
+                    <li>Right to **legal counsel** during interrogation.</li>
+                    <li>Physical or **custodial abuse is illegal** (Torture Act 2022).</li>
+                    <li>Laws: Constitution (Article 10A), CrPC Sections 54, 61, 167.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+        <div class="flashcard">
+            <div class="flashcard-front">
+                What is your right to **Public Information Access** in Pakistan?
+            </div>
+            <div class="flashcard-back">
+                <ul>
+                    <li>Right to **information from any government department**.</li>
+                    <li>Request must be replied to within **10-30 days**.</li>
+                    <li>Laws: RTI Act 2017, PPA + Punjab RTI Act.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+        <div class="flashcard">
+            <div class="flashcard-front">
+                What protections do tenants have against **Illegal Eviction** in Pakistan?
+            </div>
+            <div class="flashcard-back">
+                <ul>
+                    <li>**No eviction without court order** or legal notice.</li>
+                    <li>Verbal leases still have legal weight.</li>
+                    <li>Law: Punjab Rented Premises Act.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+        <div class="flashcard">
+            <div class="flashcard-front">
+                What are your rights regarding **Fair Wages and Job Security** in Pakistan?
+            </div>
+            <div class="flashcard-back">
+                <ul>
+                    <li>**Minimum wages** are protected.</li>
+                    <li>**Overtime pay** for more than 8 hours/day.</li>
+                    <li>**Severance pay** (30 days/year worked).</li>
+                    <li>Women: **12-16 weeks paid maternity leave**.</li>
+                    <li>Laws: Minimum Wages Ordinance, Industrial Relations Act, Provincial Employees Social Security Ordinance.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+        <div class="flashcard">
+            <div class="flashcard-front">
+                What are your **Digital & Privacy Rights** in Pakistan?
+            </div>
+            <div class="flashcard-back">
+                <ul>
+                    <li>**No data leaks or harassment**.</li>
+                    <li>No one can access your data/SMS/messages **without consent**.</li>
+                    <li>**Cyber harassment** and impersonation are punishable by law.</li>
+                    <li>**Unauthorized data access/modification/transmission** is punishable.</li>
+                    <li>Laws: PECA 2016, Data Protection Bill 2023.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+        <div class="flashcard">
+            <div class="flashcard-front">
+                What are your rights when **Dealing with Police** in Pakistan?
+            </div>
+            <div class="flashcard-back">
+                <ul>
+                    <li>**No arrest without reason**.</li>
+                    <li>Right to know reason for arrest, warrant, FIR, or complaint.</li>
+                    <li>Can ask for **full name** and **officer ID**.</li>
+                    <li>Women can only be **searched/arrested by female officers**.</li>
+                    <li>Laws: Police Order 2002, CrPC, Torture Act 2022.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+        <div class="flashcard">
+            <div class="flashcard-front">
+                What are your rights regarding **Free Legal Help** in Pakistan?
+            </div>
+            <div class="flashcard-back">
+                <ul>
+                    <li>**Free legal aid** for eligible low-income citizens.</li>
+                    <li>Covers civil, criminal, family, child, and women's rights cases.</li>
+                    <li>Law: Legal Aid Authority Act 2020.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+        <div class="flashcard">
+            <div class="flashcard-front">
+                What are your **Consumer Rights** in Pakistan?
+            </div>
+            <div class="flashcard-back">
+                <ul>
+                    <li>Right to **complain** and get **receipts**.</li>
+                    <li>Shops must **display prices** and issue receipts.</li>
+                    <li>Laws: Punjab Consumer Protection Act 2005, Sindh CPA 2014.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+        <div class="flashcard">
+            <div class="flashcard-front">
+                What are the rights related to **Children's Protection** in Pakistan?
+            </div>
+            <div class="flashcard-back">
+                <ul>
+                    <li>**No child labor/marriage**.</li>
+                    <li>**Child marriage** (under 18) is a crime.</li>
+                    <li>Laws: Juvenile Justice Act 2018, Zainab Alert Act 2020.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
