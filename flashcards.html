@@ -11,15 +11,24 @@
             color: #333;
             margin: 20px;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center horizontally */
             gap: 20px;
-            justify-content: center;
         }
-        .flashcard-container {
+        h1 {
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        .flashcard-wrapper {
+            position: relative;
+            width: 320px;
+            height: 200px;
+            margin: 10px auto; /* Center the flashcard container */
             perspective: 1000px;
-            width: 320px; /* Increased width for better readability */
-            height: 200px; /* Adjust height as needed */
-            margin: 10px;
+            display: none; /* Hidden by default, shown by JavaScript */
+        }
+        .flashcard-wrapper.active {
+            display: block; /* Only the active card is shown */
         }
         .flashcard {
             width: 100%;
@@ -47,6 +56,7 @@
             box-sizing: border-box;
             text-align: center;
             line-height: 1.4;
+            overflow-y: auto; /* Enable scrolling for long content */
         }
         .flashcard-front {
             background-color: #007bff;
@@ -60,12 +70,42 @@
             font-size: 0.95em;
             transform: rotateY(180deg);
             border: 1px solid #ddd;
+            text-align: left; /* Align text left for bullet points */
         }
-        h1 {
-            width: 100%;
-            text-align: center;
-            color: #0056b3;
-            margin-bottom: 30px;
+        .flashcard-back ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+        .flashcard-back li {
+            margin-bottom: 5px;
+        }
+        .navigation-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .navigation-buttons button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .navigation-buttons button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .card-counter {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
         }
     </style>
 </head>
@@ -73,7 +113,8 @@
 
     <h1>Everyday Rights in Pakistan: Flashcards</h1>
 
-    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+    <!-- Flashcard 1: Protection from Arbitrary Arrest or Detention -->
+    <div class="flashcard-wrapper" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
         <div class="flashcard">
             <div class="flashcard-front">
                 What are your rights regarding **Protection from Arbitrary Arrest or Detention** in Pakistan?
@@ -90,7 +131,8 @@
         </div>
     </div>
 
-    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+    <!-- Flashcard 2: Right to Know – Public Information Access -->
+    <div class="flashcard-wrapper" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
         <div class="flashcard">
             <div class="flashcard-front">
                 What is your right to **Public Information Access** in Pakistan?
@@ -105,7 +147,8 @@
         </div>
     </div>
 
-    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+    <!-- Flashcard 3: Protection Against Illegal Eviction -->
+    <div class="flashcard-wrapper" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
         <div class="flashcard">
             <div class="flashcard-front">
                 What protections do tenants have against **Illegal Eviction** in Pakistan?
@@ -120,7 +163,8 @@
         </div>
     </div>
 
-    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+    <!-- Flashcard 4: Fair Wages and Job Security -->
+    <div class="flashcard-wrapper" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
         <div class="flashcard">
             <div class="flashcard-front">
                 What are your rights regarding **Fair Wages and Job Security** in Pakistan?
@@ -137,7 +181,8 @@
         </div>
     </div>
 
-    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+    <!-- Flashcard 5: Digital & Privacy Rights -->
+    <div class="flashcard-wrapper" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
         <div class="flashcard">
             <div class="flashcard-front">
                 What are your **Digital & Privacy Rights** in Pakistan?
@@ -154,7 +199,8 @@
         </div>
     </div>
 
-    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+    <!-- Flashcard 6: Dealing with Police -->
+    <div class="flashcard-wrapper" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
         <div class="flashcard">
             <div class="flashcard-front">
                 What are your rights when **Dealing with Police** in Pakistan?
@@ -171,7 +217,8 @@
         </div>
     </div>
 
-    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+    <!-- Flashcard 7: Free Legal Help -->
+    <div class="flashcard-wrapper" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
         <div class="flashcard">
             <div class="flashcard-front">
                 What are your rights regarding **Free Legal Help** in Pakistan?
@@ -186,7 +233,8 @@
         </div>
     </div>
 
-    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+    <!-- Flashcard 8: Consumer Rights -->
+    <div class="flashcard-wrapper" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
         <div class="flashcard">
             <div class="flashcard-front">
                 What are your **Consumer Rights** in Pakistan?
@@ -201,7 +249,8 @@
         </div>
     </div>
 
-    <div class="flashcard-container" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
+    <!-- Flashcard 9: Children's Protection -->
+    <div class="flashcard-wrapper" onclick="this.querySelector('.flashcard').classList.toggle('flipped')">
         <div class="flashcard">
             <div class="flashcard-front">
                 What are the rights related to **Children's Protection** in Pakistan?
@@ -215,6 +264,65 @@
             </div>
         </div>
     </div>
+
+    <div class="card-counter">
+        Card <span id="currentCardNum">1</span> of <span id="totalCardsNum">9</span>
+    </div>
+
+    <div class="navigation-buttons">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        const flashcardWrappers = document.querySelectorAll('.flashcard-wrapper');
+        let currentCardIndex = 0;
+        const totalCards = flashcardWrappers.length;
+
+        const currentCardNumSpan = document.getElementById('currentCardNum');
+        const totalCardsNumSpan = document.getElementById('totalCardsNum');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        totalCardsNumSpan.textContent = totalCards;
+
+        function showCard(index) {
+            flashcardWrappers.forEach((wrapper, i) => {
+                wrapper.classList.remove('active');
+                // Ensure card is unflipped when navigating
+                wrapper.querySelector('.flashcard').classList.remove('flipped');
+            });
+            flashcardWrappers[index].classList.add('active');
+            currentCardNumSpan.textContent = index + 1;
+            updateNavigationButtons();
+        }
+
+        function nextCard() {
+            if (currentCardIndex < totalCards - 1) {
+                currentCardIndex++;
+                showCard(currentCardIndex);
+            }
+        }
+
+        function prevCard() {
+            if (currentCardIndex > 0) {
+                currentCardIndex--;
+                showCard(currentCardIndex);
+            }
+        }
+
+        function updateNavigationButtons() {
+            prevBtn.disabled = (currentCardIndex === 0);
+            nextBtn.disabled = (currentCardIndex === totalCards - 1);
+        }
+
+        // Event Listeners
+        nextBtn.addEventListener('click', nextCard);
+        prevBtn.addEventListener('click', prevCard);
+
+        // Initial display
+        showCard(currentCardIndex);
+    </script>
 
 </body>
 </html>
